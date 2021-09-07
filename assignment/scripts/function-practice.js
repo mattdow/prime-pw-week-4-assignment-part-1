@@ -80,6 +80,14 @@ function find( value, array ){
 
 console.log( 'find - should say true', find('red', ['red', 'orange', 'yellow']));
 console.log( 'find - should say false', find('green', ['red', 'orange', 'yellow']));
+console.log( 'find - should say true', find('e', 'Matthew'));
+console.log( 'find - should say false', find('x', 'Matthew'));
+console.log( 'find - should say true', find(12, [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]));
+console.log( 'find - should say false', find(13, [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]));
+console.log( 'find - should say false', find(12, [2, 4, 6, 8, 10]));
+console.log( 'find - should say false', find(12, []));
+
+
 
 // ----------------------
 // Stretch Goals
@@ -87,8 +95,14 @@ console.log( 'find - should say false', find('green', ['red', 'orange', 'yellow'
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
-}
+  let returnValue = false;
+  for (item of string) {
+    if (item === letter) {
+      returnValue = true;
+    } //end check of each string letter
+  } //end of loop through the string
+  return returnValue;
+} // end of function isFirstLetter
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
