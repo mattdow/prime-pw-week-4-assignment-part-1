@@ -107,16 +107,42 @@ console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
+function sumAll( numberArray ) {
+  let sum = 0;
   // TODO: loop to add items
+  for (let i = 0; i < numberArray.length; i++) {
+    sum = sum + numberArray[i];
+  } // end of loop through the numbers
   return sum;
-}
+} // end of sumAll function
+// Note: when I tried using a for of loop, the sum function concatenated instead
+// of adding the numbers. Not seeing exactly why this happens, but when I use
+// an index, the array items are treated as numbers.
+
+console.log( 'sumAll test - should say 6', sumAll([0, 1, 2, 3]));
+console.log( 'sumAll test - should say 0', sumAll([0, 1, -1, 2, -2]));
+console.log( 'sumAll test - should say -20', sumAll([-5, -25, 8, 2]));
+console.log( 'sumAll test - should say 0', sumAll([]));
+
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
+function positiveNumbers( numberArray ){
+  let result = [];
+  for (let i = 0; i < numberArray.length; i++) {
+    if (numberArray[i] > 0) {
+      result.push(numberArray[i]);
+    } // end of positive number check
+  } // end of loop through the array
+  return result;
+} // end of positiveNumbers function
+
+console.log( 'positiveNumbers test - should say [1, 2, 3]', positiveNumbers([0, 1, 2, 3]));
+console.log( 'positiveNumbers test - should say [1, 2]', positiveNumbers([0, 1, -1, 2, -2]));
+console.log( 'positiveNumbers test - should say [8, 2]', positiveNumbers([-5, -25, 8, 2]));
+console.log( 'positiveNumbers test - should say []', positiveNumbers([]));
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
