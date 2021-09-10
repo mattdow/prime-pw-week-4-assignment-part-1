@@ -182,7 +182,7 @@ function specialSum(number){
 }
 //Testing the function
 console.log( 'specialSum test - should result in 23', specialSum(10));
-console.log( 'specialSum test - should result in 23', specialSum(100));
+console.log( 'specialSum test - should result in 2318', specialSum(100));
 
 // Challenge 2: Given a string of space separated numbers, return the highest and lowest number.
 // Example highAndLow("1 9 3 4 -5") should return "9 -5"
