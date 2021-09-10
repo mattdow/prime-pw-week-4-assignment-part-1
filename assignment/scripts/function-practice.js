@@ -167,16 +167,51 @@ console.log( 'positiveNumbers test - should say []', positiveNumbers([]));
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
 
-// Sum the multiples of 3 or 5 below a given numbers
+// Challenge 1: Given a positive integer, return the sum of all smaller integers
+// that are divisible by 3 or 5. If an integer is divisible by both 3 and 5, it
+// should be added only once.
 
 function specialSum(number){
   let sum = 0; // setting default sum to 0, useful if number is negative or <= 3
   for ( i = 3; i < number; i++ ) { // 3 is the first number to be added, looping for all numbers < number
     if ( i % 3 === 0 || i % 5 === 0 ){ // checking if i is divisible by either 3 or 5
       sum += i; // if so, add i to the running sum
-    }
-  }
+    } // end conditional
+  } //  end loop
   return sum;
 }
-
+//Testing the function
 console.log( 'specialSum test - should result in 23', specialSum(10));
+console.log( 'specialSum test - should result in 23', specialSum(100));
+
+// Challenge 2: Given a string of space separated numbers, return the highest and lowest number.
+// Example highAndLow("1 9 3 4 -5") should return "9 -5"
+
+function highAndLow(numbers){
+  // split the string to array of strings
+  stringArray = numbers.split(' ');
+
+  // convert strings in array to numbers
+  numArray = stringArray.map(i => Number(i));
+
+  // define highest and lowest at array[0]
+  highest = numArray[0];
+  lowest = numArray[0];
+
+  // loop to change highest and lowest if needed through array
+  for (i = 1; i < numArray.length; i++) {
+    if (numArray[i] > highest) {
+      highest = numArray[i];
+    }
+    if (numArray[i] < lowest) {
+      lowest = numArray[i];
+    }
+  }
+  // return appropriate string
+  return `${highest} ${lowest}`
+}
+
+// Testing highAndLow
+
+console.log('String of numbers is "8 3 -5 42 -1 0 0 -9 4 7 4 -4"');
+console.log('Highest and lowest are', highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
