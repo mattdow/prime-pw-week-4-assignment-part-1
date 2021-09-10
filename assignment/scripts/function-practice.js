@@ -215,3 +215,7 @@ function highAndLow(numbers){
 
 console.log('String of numbers is "8 3 -5 42 -1 0 0 -9 4 7 4 -4"');
 console.log('Highest and lowest are', highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
+console.log('String of numbers is "0"');
+console.log('Highest and lowest are', highAndLow("0"));
+console.log('String of numbers is "5 5"');
+console.log('Highest and lowest are', highAndLow("5 5"));
